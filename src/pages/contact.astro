@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+	title="Contact Us — Image to Base64 | ImageToBase64.dpdns.org"
+	description="Get in touch with the team behind ImageToBase64.dpdns.org. Send us feedback, bug reports, or feature requests."
+	canonical="https://www.imagetobase64.dpdns.org/contact"
+>
+	<main style="max-width:800px; margin:0 auto; padding:64px 24px 96px; font-family:'Geist',Arial,sans-serif; color:var(--text-body); line-height:1.75;">
+		<h1 style="font-size:36px; font-weight:600; color:var(--text-ink); letter-spacing:-1px; margin:0 0 16px;">
+			Contact Us
+		</h1>
+		<p style="font-size:18px; color:var(--text-body); margin:0 0 32px;">
+			Have questions, feedback, or feature suggestions for ImageToBase64.dpdns.org? We'd love to hear from you.
+		</p>
+
+		<div style="border-top:1px solid var(--border-color); margin-bottom:40px;"></div>
+
+		<div style="display:grid; grid-template-columns:1fr 1fr; gap:32px;" class="contact-layout">
+			<!-- Info box -->
+			<div style="display:flex; flex-direction:column; gap:20px;">
+				<div style="border:1px solid var(--border-color); border-radius:12px; padding:24px; background:var(--bg-elevated);">
+					<h3 style="font-size:16px; font-weight:600; color:var(--text-ink); margin:0 0 8px;">📧 Email Us Directly</h3>
+					<p style="margin:0 0 8px; font-size:14px;">For general inquiries, partnership opportunities, or support:</p>
+					<a href="mailto:support@imagetobase64.dpdns.org" style="color:var(--accent-blue); font-weight:500; text-decoration:none; font-size:15px;">support@imagetobase64.dpdns.org</a>
+				</div>
+
+				<div style="border:1px solid var(--border-color); border-radius:12px; padding:24px; background:var(--bg-elevated);">
+					<h3 style="font-size:16px; font-weight:600; color:var(--text-ink); margin:0 0 8px;">⚡ Fast Response</h3>
+					<p style="margin:0; font-size:14px;">We typically respond to developer feedback and bug reports within 24–48 hours.</p>
+				</div>
+			</div>
+
+			<!-- Form -->
+			<form style="display:flex; flex-direction:column; gap:16px; border:1px solid var(--border-color); border-radius:12px; padding:24px; background:var(--bg-elevated);" onsubmit="event.preventDefault(); alert('Thank you for your message! We will get back to you shortly.');">
+				<div>
+					<label style="display:block; font-size:13px; font-weight:500; color:var(--text-ink); margin-bottom:6px;">Your Name</label>
+					<input type="text" required placeholder="John Doe" style="width:100%; padding:10px 12px; border:1px solid var(--border-color); border-radius:6px; font-size:14px; outline:none; box-sizing:border-box; background:var(--bg-page); color:var(--text-ink);" />
+				</div>
+
+				<div>
+					<label style="display:block; font-size:13px; font-weight:500; color:var(--text-ink); margin-bottom:6px;">Your Email Address</label>
+					<input type="email" required placeholder="john@example.com" style="width:100%; padding:10px 12px; border:1px solid var(--border-color); border-radius:6px; font-size:14px; outline:none; box-sizing:border-box; background:var(--bg-page); color:var(--text-ink);" />
+				</div>
+
+				<div>
+					<label style="display:block; font-size:13px; font-weight:500; color:var(--text-ink); margin-bottom:6px;">Message</label>
+					<textarea required rows="4" placeholder="How can we help you?" style="width:100%; padding:10px 12px; border:1px solid var(--border-color); border-radius:6px; font-size:14px; outline:none; box-sizing:border-box; resize:vertical; font-family:inherit; background:var(--bg-page); color:var(--text-ink);"></textarea>
+				</div>
+
+				<button type="submit" style="padding:12px 20px; background:var(--text-ink); color:var(--bg-page); border:none; border-radius:6px; font-size:14px; font-weight:500; cursor:pointer; margin-top:8px;">
+					Send Message
+				</button>
+			</form>
+		</div>
+	</main>
+</Layout>
+
+<style>
+  @media (max-width: 640px) {
+    .contact-layout {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

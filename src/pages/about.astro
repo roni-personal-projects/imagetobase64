@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+	title="About Us — Image to Base64 | ImageToBase64.dpdns.org"
+	description="Learn about ImageToBase64.dpdns.org — a free, 100% browser-based developer utility designed for high performance, absolute privacy, and zero server storage."
+	canonical="https://www.imagetobase64.dpdns.org/about"
+>
+	<main style="max-width:800px; margin:0 auto; padding:64px 24px 96px; font-family:'Geist',Arial,sans-serif; color:var(--text-body); line-height:1.75;">
+		<h1 style="font-size:36px; font-weight:600; color:var(--text-ink); letter-spacing:-1px; margin:0 0 16px;">
+			About ImageToBase64.dpdns.org
+		</h1>
+		<p style="font-size:18px; color:var(--text-ink); margin:0 0 32px; font-weight:500;">
+			We built ImageToBase64.dpdns.org to give developers, designers, and creators a fast, private, and zero-friction tool to convert images to Base64 strings.
+		</p>
+
+		<div style="border-top:1px solid var(--border-color); margin-bottom:40px;"></div>
+
+		<section style="margin-bottom:36px;">
+			<h2 style="font-size:22px; font-weight:600; color:var(--text-ink); margin:0 0 12px;">Our Mission</h2>
+			<p style="margin:0 0 16px;">
+				Most online file converters force users to upload their images to remote servers, wait in processing queues, deal with restrictive file size limits (like 1 MB caps), or sign up for accounts.
+			</p>
+			<p style="margin:0;">
+				Our mission was simple: eliminate all of that. By leveraging modern HTML5 browser APIs (`FileReader`, `Canvas`, `Web File API`), we process 100% of your images locally in your web browser.
+			</p>
+		</section>
+
+		<section style="margin-bottom:36px;">
+			<h2 style="font-size:22px; font-weight:600; color:var(--text-ink); margin:0 0 12px;">Core Principles</h2>
+			<div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;" class="about-grid">
+				<div style="border:1px solid var(--border-color); border-radius:12px; padding:20px; background:var(--bg-elevated);">
+					<h3 style="font-size:16px; font-weight:600; color:var(--text-ink); margin:0 0 8px;">🔒 Privacy First</h3>
+					<p style="margin:0; font-size:14px;">Your files never leave your device. We have no servers receiving your images, ensuring complete data privacy.</p>
+				</div>
+				<div style="border:1px solid var(--border-color); border-radius:12px; padding:20px; background:var(--bg-elevated);">
+					<h3 style="font-size:16px; font-weight:600; color:var(--text-ink); margin:0 0 8px;">⚡ Instant Speed</h3>
+					<p style="margin:0; font-size:14px;">Because there is no network upload or download latency, conversions happen instantaneously in milliseconds.</p>
+				</div>
+				<div style="border:1px solid var(--border-color); border-radius:12px; padding:20px; background:var(--bg-elevated);">
+					<h3 style="font-size:16px; font-weight:600; color:var(--text-ink); margin:0 0 8px;">🛠️ Developer Experience</h3>
+					<p style="margin:0; font-size:14px;">We generate ready-to-use code snippets for HTML, CSS, React, Tailwind CSS, and Markdown with 1-click copy.</p>
+				</div>
+				<div style="border:1px solid var(--border-color); border-radius:12px; padding:20px; background:var(--bg-elevated);">
+					<h3 style="font-size:16px; font-weight:600; color:var(--text-ink); margin:0 0 8px;">💯 100% Free</h3>
+					<p style="margin:0; font-size:14px;">No hidden subscriptions, no file size limits, no paywalls, and no mandatory account sign-ups.</p>
+				</div>
+			</div>
+		</section>
+
+		<section style="margin-bottom:36px;">
+			<h2 style="font-size:22px; font-weight:600; color:var(--text-ink); margin:0 0 12px;">Supported Image Formats</h2>
+			<p style="margin:0;">
+				Our tool supports all modern image formats readable by web browsers including PNG, JPEG, WebP, SVG, GIF, BMP, ICO, TIFF, AVIF, and HEIC.
+			</p>
+		</section>
+
+		<section>
+			<h2 style="font-size:22px; font-weight:600; color:var(--text-ink); margin:0 0 12px;">Get in Touch</h2>
+			<p style="margin:0;">
+				Have feedback, feature requests, or questions? Feel free to reach out via our <a href="/contact" style="color:var(--accent-blue); text-decoration:none;">Contact Page</a>.
+			</p>
+		</section>
+	</main>
+</Layout>
+
+<style>
+  @media (max-width: 640px) {
+    .about-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

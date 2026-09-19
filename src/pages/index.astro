@@ -1,0 +1,188 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Converter from '../components/Converter.jsx';
+import { FAQ_ITEMS } from '../data/faq';
+---
+
+<Layout
+	title="Image to Base64 Converter — Free Online Tool | ImageToBase64.dpdns.org"
+	description="Free online image to base64 converter. Convert image to base64 instantly in your browser — no uploads, no limits, 100% private. Supports PNG, JPEG, WebP, SVG, GIF and more."
+	canonical="https://www.imagetobase64.dpdns.org/"
+	includeFaqSchema={true}
+>
+	<main>
+		<Hero />
+		<div style="max-width:900px; margin:0 auto; padding:0 24px 80px;">
+			<Converter client:load />
+		</div>
+
+		<!-- SEO Article Section -->
+		<article
+			style="max-width:860px; margin:0 auto; padding:0 24px 96px; font-family:'Geist',Arial,sans-serif; color:var(--text-body); line-height:1.75;"
+			aria-label="About Image to Base64 Converter"
+		>
+			<!-- Divider -->
+			<div style="border-top:1px solid var(--border-color); margin-bottom:64px;"></div>
+
+			<!-- Intro -->
+			<section style="margin-bottom:48px;">
+				<h2 style="font-size:28px; font-weight:600; color:var(--text-ink); letter-spacing:-0.6px; margin:0 0 16px;">
+					What Is an Image to Base64 Converter?
+				</h2>
+				<p style="margin:0 0 16px;">
+					An <strong>image to base64 converter</strong> is a free online tool that transforms any image file — PNG, JPEG, WebP, SVG, GIF, BMP, ICO, TIFF, AVIF, or HEIC — into a base64-encoded string. That string can be embedded directly inside HTML, CSS, React components, Tailwind CSS classes, or Markdown files without needing a separate image server or external URL.
+				</p>
+				<p style="margin:0 0 16px;">
+					Base64 is a binary-to-text encoding scheme that represents binary data (like image bytes) using only printable ASCII characters. When an image is base64-encoded, it becomes a long string of letters, numbers, and symbols — prefixed with a data URI like <code style="font-family:monospace; background:var(--code-bg); color:var(--text-ink); padding:2px 6px; border-radius:4px; font-size:13px;">data:image/png;base64,...</code> — that any browser can render without an extra network request.
+				</p>
+				<p style="margin:0;">
+					Our <strong>image to base64 online</strong> tool runs entirely inside your browser. Your images are never uploaded to any server. Conversion happens locally using the HTML5 FileReader API, which means there are no file size limits, no waiting times, and complete privacy guaranteed.
+				</p>
+			</section>
+
+			<!-- How to use -->
+			<section style="margin-bottom:48px;">
+				<h2 style="font-size:28px; font-weight:600; color:var(--text-ink); letter-spacing:-0.6px; margin:0 0 16px;">
+					How to Convert Image to Base64 Online — Step by Step
+				</h2>
+				<p style="margin:0 0 16px;">
+					Using our <strong>image to base64 converter</strong> is the fastest way to get a base64 string from any image. Here's how:
+				</p>
+				<ol style="margin:0 0 16px; padding-left:24px; display:flex; flex-direction:column; gap:12px;">
+					<li><strong>Select your image</strong> — drag &amp; drop it onto the converter, click to browse your files, or press <kbd style="font-family:monospace; background:var(--bg-subtle); border:1px solid var(--border-color); color:var(--text-ink); border-radius:4px; padding:1px 6px; font-size:12px;">Ctrl+V</kbd> / <kbd style="font-family:monospace; background:var(--bg-subtle); border:1px solid var(--border-color); color:var(--text-ink); border-radius:4px; padding:1px 6px; font-size:12px;">Cmd+V</kbd> to paste an image directly from your clipboard.</li>
+					<li><strong>Instant conversion</strong> — the tool converts the image to base64 in milliseconds, entirely within your browser. No upload progress bars, no server round-trips.</li>
+					<li><strong>Copy your snippet</strong> — choose from HTML <code style="font-family:monospace; background:var(--code-bg); color:var(--text-ink); padding:2px 6px; border-radius:4px; font-size:13px;">&lt;img src="..."&gt;</code>, CSS <code style="font-family:monospace; background:var(--code-bg); color:var(--text-ink); padding:2px 6px; border-radius:4px; font-size:13px;">background-image: url(...)</code>, React JSX, Tailwind arbitrary value, or raw base64. Click to copy with one click.</li>
+					<li><strong>Paste and use</strong> — embed the result directly into your codebase. No hosting, no CDN, no broken image links.</li>
+				</ol>
+				<p style="margin:0;">
+					It's truly that simple. Whether you need to <strong>convert image to base64</strong> for an HTML email template, a CSS sprite, a React component, or a Tailwind utility, our tool gives you the right snippet in seconds.
+				</p>
+			</section>
+
+			<!-- Why base64 -->
+			<section style="margin-bottom:48px;">
+				<h2 style="font-size:28px; font-weight:600; color:var(--text-ink); letter-spacing:-0.6px; margin:0 0 16px;">
+					Why Use Base64 Image Encoding?
+				</h2>
+				<p style="margin:0 0 16px;">
+					Developers use base64-encoded images for several important reasons:
+				</p>
+
+				<div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;" class="feature-cards-grid">
+					<div style="border:1px solid var(--border-color); border-radius:12px; padding:20px; background:var(--bg-elevated);">
+						<h3 style="font-size:16px; font-weight:600; color:var(--text-ink); margin:0 0 8px;">⚡ Fewer HTTP Requests</h3>
+						<p style="margin:0; font-size:14px;">Embedding an image as base64 eliminates one HTTP request per image. For pages with many small icons or logos, this can measurably improve Time to First Byte (TTFB) and load performance — especially on mobile networks.</p>
+					</div>
+					<div style="border:1px solid var(--border-color); border-radius:12px; padding:20px; background:var(--bg-elevated);">
+						<h3 style="font-size:16px; font-weight:600; color:var(--text-ink); margin:0 0 8px;">📧 Email Templates</h3>
+						<p style="margin:0; font-size:14px;">Email clients like Gmail and Outlook frequently block external image URLs by default. Base64-embedded images bypass these restrictions — your images render immediately, without requiring user permission or a connection to your image server.</p>
+					</div>
+					<div style="border:1px solid var(--border-color); border-radius:12px; padding:20px; background:var(--bg-elevated);">
+						<h3 style="font-size:16px; font-weight:600; color:var(--text-ink); margin:0 0 8px;">🔒 No External Dependencies</h3>
+						<p style="margin:0; font-size:14px;">Base64 images are self-contained inside your HTML or CSS. If your CDN goes down or an image URL breaks, your embedded images remain perfectly visible. This makes your application more resilient and easier to archive.</p>
+					</div>
+					<div style="border:1px solid var(--border-color); border-radius:12px; padding:20px; background:var(--bg-elevated);">
+						<h3 style="font-size:16px; font-weight:600; color:var(--text-ink); margin:0 0 8px;">🚀 Simpler Deployment</h3>
+						<p style="margin:0; font-size:14px;">When images travel with your code as base64 strings, you don't need to manage separate image files, S3 buckets, or CDN configurations. Perfect for design prototypes, internal tools, email signatures, and offline-capable apps.</p>
+					</div>
+				</div>
+
+				<p style="margin:0;">
+					The main trade-off is file size — base64 encoding increases the size of an image by roughly 33% compared to the original binary. For small icons, logos, and decorative elements this overhead is negligible. For large photographs, it's usually better to serve them via a CDN.
+				</p>
+			</section>
+
+			<!-- Supported formats -->
+			<section style="margin-bottom:48px;">
+				<h2 style="font-size:28px; font-weight:600; color:var(--text-ink); letter-spacing:-0.6px; margin:0 0 16px;">
+					Supported Image Formats
+				</h2>
+				<p style="margin:0 0 16px;">
+					Our <strong>image to base 64</strong> converter supports all major raster and vector image formats that modern browsers can read:
+				</p>
+				<div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;">
+					{['PNG', 'JPEG / JPG', 'WebP', 'SVG', 'GIF', 'BMP', 'ICO', 'TIFF', 'AVIF', 'HEIC'].map(fmt => (
+						<span style="display:inline-flex; padding:4px 12px; border:1px solid var(--border-color); border-radius:9999px; font-size:13px; font-weight:500; color:var(--text-ink); background:var(--bg-elevated);">
+							{fmt}
+						</span>
+					))}
+				</div>
+				<p style="margin:0;">
+					SVG files are particularly useful when encoded as base64 because the resulting data URI can be used directly as a CSS <code style="font-family:monospace; background:var(--code-bg); color:var(--text-ink); padding:2px 6px; border-radius:4px; font-size:13px;">background-image</code>, eliminating the need for any external file while keeping the vector quality intact.
+				</p>
+			</section>
+
+			<!-- Developer use cases -->
+			<section style="margin-bottom:48px;">
+				<h2 style="font-size:28px; font-weight:600; color:var(--text-ink); letter-spacing:-0.6px; margin:0 0 16px;">
+					Developer Use Cases &amp; Code Snippets
+				</h2>
+				<p style="margin:0 0 16px;">
+					After you <strong>convert image to base64 online</strong>, you can immediately use the output in your code. Here are the most common patterns:
+				</p>
+
+				<h3 style="font-size:18px; font-weight:600; color:var(--text-ink); margin:24px 0 8px;">HTML — img tag</h3>
+				<pre is:raw style="background:var(--code-bg); border:1px solid var(--border-color); color:var(--text-ink); border-radius:8px; padding:16px; font-family:monospace; font-size:13px; overflow-x:auto; margin:0 0 24px;"><code>&lt;img src="data:image/png;base64,iVBORw0KGgoAAAA..." alt="My Image" /&gt;</code></pre>
+
+				<h3 style="font-size:18px; font-weight:600; color:var(--text-ink); margin:0 0 8px;">CSS — background-image</h3>
+				<pre is:raw style="background:var(--code-bg); border:1px solid var(--border-color); color:var(--text-ink); border-radius:8px; padding:16px; font-family:monospace; font-size:13px; overflow-x:auto; margin:0 0 24px;"><code>.hero {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAA...');
+  background-size: cover;
+}</code></pre>
+
+				<h3 style="font-size:18px; font-weight:600; color:var(--text-ink); margin:0 0 8px;">React / JSX</h3>
+				<pre is:raw style="background:var(--code-bg); border:1px solid var(--border-color); color:var(--text-ink); border-radius:8px; padding:16px; font-family:monospace; font-size:13px; overflow-x:auto; margin:0 0 24px;"><code>const logo = "data:image/png;base64,iVBORw0KGgoAAAA...";
+
+export function Logo() {
+  return &lt;img src={logo} alt="Logo" width="120" height="40" /&gt;;
+}</code></pre>
+
+				<h3 style="font-size:18px; font-weight:600; color:var(--text-ink); margin:0 0 8px;">Tailwind CSS v4 — arbitrary value</h3>
+				<pre is:raw style="background:var(--code-bg); border:1px solid var(--border-color); color:var(--text-ink); border-radius:8px; padding:16px; font-family:monospace; font-size:13px; overflow-x:auto; margin:0 0 8px;"><code>&lt;div class="bg-[url('data:image/png;base64,iVBORw0KGgoAAAA...')] bg-cover"&gt;</code></pre>
+			</section>
+
+			<!-- Why choose us -->
+			<section style="margin-bottom:48px;">
+				<h2 style="font-size:28px; font-weight:600; color:var(--text-ink); letter-spacing:-0.6px; margin:0 0 16px;">
+					Why Choose ImageToBase64.dpdns.org?
+				</h2>
+				<ul style="margin:0; padding-left:24px; display:flex; flex-direction:column; gap:12px;">
+					<li><strong>100% Private &amp; Secure</strong> — Your images never leave your device. All processing happens locally in your browser using the Web File API. We have no server, no database, and zero access to your files.</li>
+					<li><strong>No File Size Limits</strong> — Unlike competitors who cap free conversions at 1 MB, our client-side architecture means you can convert images of any size, limited only by your browser's memory.</li>
+					<li><strong>Instant Results</strong> — Conversion takes milliseconds because there is no upload phase. Drop your image, and the base64 string appears immediately.</li>
+					<li><strong>Two-Way Conversion</strong> — Not just an image to base64 converter — you can also decode any base64 string back into a viewable image. Paste a data URI and instantly see what it contains.</li>
+					<li><strong>Developer-Friendly Snippets</strong> — We don't just give you the raw base64. We generate ready-to-paste code for HTML, CSS, React JSX, Tailwind CSS, and Markdown — so you can go straight from image to code in one step.</li>
+					<li><strong>No Sign-Up Required</strong> — No accounts, no email addresses, no paywalls. Open the page, convert your image, copy the code. That's it.</li>
+				</ul>
+			</section>
+
+			<!-- FAQ Section -->
+			<section style="margin-bottom:0;" id="faq">
+				<h2 style="font-size:28px; font-weight:600; color:var(--text-ink); letter-spacing:-0.6px; margin:0 0 24px;">
+					Frequently Asked Questions (FAQ)
+				</h2>
+				<div style="display:flex; flex-direction:column; gap:0;">
+					{FAQ_ITEMS.map((item) => (
+						<details style="border-top:1px solid var(--border-color); padding:20px 0;">
+							<summary style="font-size:16px; font-weight:500; color:var(--text-ink); cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+								{item.question}
+								<span style="font-size:20px; color:var(--text-mute); flex-shrink:0; margin-left:16px;">+</span>
+							</summary>
+							<p style="margin:12px 0 0; font-size:15px; color:var(--text-body); line-height:1.6;">{item.answer}</p>
+						</details>
+					))}
+					<div style="border-top:1px solid var(--border-color);"></div>
+				</div>
+			</section>
+		</article>
+	</main>
+</Layout>
+
+<style>
+  @media (max-width: 640px) {
+    .feature-cards-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

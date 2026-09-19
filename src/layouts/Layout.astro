@@ -1,0 +1,133 @@
+---
+import '../styles/global.css';
+import '@fontsource/geist-sans';
+import '@fontsource/geist-mono';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { FAQ_ITEMS, type FAQItem } from '../data/faq';
+
+interface Props {
+	title: string;
+	description?: string;
+	canonical?: string;
+	ogImage?: string;
+	faqs?: FAQItem[];
+	includeFaqSchema?: boolean;
+}
+
+const {
+	title,
+	description = "Free online image to base64 converter. Convert image to base64 instantly in your browser — no uploads, no limits, 100% private. Supports PNG, JPEG, WebP, SVG, GIF and more.",
+	canonical = "https://www.imagetobase64.dpdns.org/",
+	ogImage = "https://www.imagetobase64.dpdns.org/og-image.png",
+	faqs = FAQ_ITEMS,
+	includeFaqSchema = false,
+} = Astro.props;
+
+const siteName = "ImageToBase64.dpdns.org";
+
+const mainJsonLd = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebSite",
+			"@id": "https://www.imagetobase64.dpdns.org/#website",
+			"url": "https://www.imagetobase64.dpdns.org/",
+			"name": siteName,
+			"description": description,
+			"publisher": {
+				"@id": "https://www.imagetobase64.dpdns.org/#organization"
+			}
+		},
+		{
+			"@type": "Organization",
+			"@id": "https://www.imagetobase64.dpdns.org/#organization",
+			"name": siteName,
+			"url": "https://www.imagetobase64.dpdns.org/"
+		},
+		{
+			"@type": "WebPage",
+			"@id": canonical + "#webpage",
+			"url": canonical,
+			"name": title,
+			"description": description,
+			"isPartOf": { "@id": "https://www.imagetobase64.dpdns.org/#website" }
+		}
+	]
+};
+
+const faqJsonLd = includeFaqSchema ? {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": faqs.map(item => ({
+		"@type": "Question",
+		"name": item.question,
+		"acceptedAnswer": {
+			"@type": "Answer",
+			"text": item.answer
+		}
+	}))
+} : null;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Dark Mode FOUC Script -->
+		<script is:inline>
+			(function() {
+				const theme = localStorage.getItem('theme');
+				if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+					document.documentElement.classList.add('dark');
+				} else {
+					document.documentElement.classList.remove('dark');
+				}
+			})();
+		</script>
+
+		<!-- Primary SEO -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content="image to base64, image to base64 online, convert image to base64, image to base64 converter, image to base 64, base64 encoder, base64 image, png to base64, jpg to base64, svg to base64, webp to base64, image encoder online" />
+		<meta name="author" content={siteName} />
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+		<link rel="canonical" href={canonical} />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content={siteName} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Image to Base64 Converter — Free Online Tool" />
+		<meta property="og:locale" content="en_GB" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<meta name="theme-color" content="#171717" />
+
+		<!-- JSON-LD Structured Data -->
+		<script type="application/ld+json" set:html={JSON.stringify(mainJsonLd)} />
+		{faqJsonLd && <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />}
+	</head>
+	<body style="min-height:100vh; display:flex; flex-direction:column; justify-content:space-between; margin:0; background-color:var(--bg-page); color:var(--text-ink);">
+		<div>
+			<Navbar />
+			<slot />
+		</div>
+		<Footer />
+	</body>
+</html>

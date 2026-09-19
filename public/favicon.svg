@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Background Squircle -->
+  <rect width="512" height="512" rx="128" class="bg-rect" fill="#171717"/>
+  
+  <!-- Outer Image Frame -->
+  <rect x="96" y="96" width="320" height="320" rx="48" stroke="url(#gradient-accent)" stroke-width="28" fill="none"/>
+  
+  <!-- Image Mountain / Code symbol -->
+  <path d="M160 336L232 224L280 296L312 248L352 336H160Z" fill="url(#gradient-accent)"/>
+  
+  <!-- Sun / Sparkle Circle -->
+  <circle cx="208" cy="184" r="28" fill="#50e3c2"/>
+
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="gradient-accent" x1="96" y1="96" x2="416" y2="416" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#50e3c2"/>
+      <stop offset="50%" stop-color="#0070f3"/>
+      <stop offset="100%" stop-color="#eb367f"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .bg-rect { fill: #171717; }
+    @media (prefers-color-scheme: dark) {
+      .bg-rect { fill: #121212; stroke: #262626; stroke-width: 8px; }
+    }
+  </style>
+</svg>

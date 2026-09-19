@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.imagetobase64.dpdns.org
+
+# Sitemaps
+Sitemap: https://www.imagetobase64.dpdns.org/sitemap.xml

@@ -1,0 +1,67 @@
+---
+---
+<header style="border-bottom:1px solid var(--border-color); background:var(--bg-elevated); position:sticky; top:0; z-index:50; transition:background-color 0.2s, border-color 0.2s;">
+  <div style="max-width:1100px; margin:0 auto; padding:12px 24px; display:flex; align-items:center; justify-content:space-between;">
+    <!-- Logo -->
+    <a href="/" style="display:flex; align-items:center; gap:8px; text-decoration:none; color:var(--text-ink); font-weight:600; font-size:18px; font-family:'Geist',sans-serif;">
+      <span style="width:28px; height:28px; border-radius:6px; background:var(--text-ink); color:var(--bg-page); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700;">B64</span>
+      <span>ImageToBase64<span style="color:var(--text-mute); font-size:14px; font-weight:400;">.dpdns.org</span></span>
+    </a>
+
+    <!-- Nav Links & Dark Mode Toggle -->
+    <div style="display:flex; align-items:center; gap:20px;" class="desktop-nav">
+      <a href="/" style="color:var(--text-body); text-decoration:none; font-size:14px; font-weight:500; transition:color 0.15s;">Home</a>
+      <a href="/about" style="color:var(--text-body); text-decoration:none; font-size:14px; font-weight:500; transition:color 0.15s;">About Us</a>
+      <a href="/privacy" style="color:var(--text-body); text-decoration:none; font-size:14px; font-weight:500; transition:color 0.15s;">Privacy Policy</a>
+      <a href="/terms" style="color:var(--text-body); text-decoration:none; font-size:14px; font-weight:500; transition:color 0.15s;">Terms &amp; Conditions</a>
+      <a href="/contact" style="color:var(--text-body); text-decoration:none; font-size:14px; font-weight:500; transition:color 0.15s;">Contact Us</a>
+
+      <!-- Dark Mode Toggle Button -->
+      <button
+        id="theme-toggle-btn"
+        type="button"
+        aria-label="Toggle Dark Mode"
+        style="background:var(--bg-subtle); border:1px solid var(--border-color); color:var(--text-ink); padding:6px; border-radius:8px; cursor:pointer; display:flex; align-items:center; justify-content:center; width:34px; height:34px; transition:all 0.2s ease;"
+      >
+        <!-- Sun Icon (shown in dark mode) -->
+        <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+        </svg>
+        <!-- Moon Icon (shown in light mode) -->
+        <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('theme-toggle-btn');
+    if (!toggleBtn) return;
+
+    toggleBtn.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  });
+</script>
+
+<style>
+  html:not(.dark) .sun-icon {
+    display: none !important;
+  }
+  html.dark .moon-icon {
+    display: none !important;
+  }
+  @media (max-width: 640px) {
+    .desktop-nav {
+      gap: 8px !important;
+      font-size: 11px !important;
+    }
+    .desktop-nav a {
+      font-size: 11px !important;
+    }
+  }
+</style>

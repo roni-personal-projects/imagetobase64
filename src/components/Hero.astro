@@ -1,0 +1,30 @@
+---
+---
+<!-- Full-width hero wrapper with gradient centered behind it -->
+<div style="position:relative; width:100%; overflow:hidden;">
+  <!-- Mesh gradient blobs - decorative, absolutely positioned behind everything -->
+  <div style="pointer-events:none; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; z-index:-10;" aria-hidden="true">
+    <div style="position:absolute; top:0; left:10%; width:400px; height:400px; background:radial-gradient(circle, var(--accent-cyan) 0%, transparent 70%); opacity:0.22; filter:blur(80px); border-radius:9999px;"></div>
+    <div style="position:absolute; top:0; right:10%; width:400px; height:400px; background:radial-gradient(circle, var(--accent-blue) 0%, transparent 70%); opacity:0.22; filter:blur(80px); border-radius:9999px;"></div>
+    <div style="position:absolute; bottom:0; left:20%; width:500px; height:300px; background:radial-gradient(circle, var(--accent-magenta) 0%, transparent 70%); opacity:0.18; filter:blur(80px); border-radius:9999px;"></div>
+    <div style="position:absolute; bottom:0; right:20%; width:300px; height:300px; background:radial-gradient(circle, var(--accent-amber) 0%, transparent 70%); opacity:0.18; filter:blur(80px); border-radius:9999px;"></div>
+  </div>
+
+  <div style="max-width:1100px; margin:0 auto; padding:80px 24px 48px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+    <!-- Eyebrow badge -->
+    <div style="display:inline-flex; align-items:center; gap:8px; padding:4px 12px; border-radius:9999px; border:1px solid var(--border-color); background:var(--bg-elevated); font-size:12px; font-family:monospace; font-weight:500; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-ink); margin-bottom:24px; box-shadow:0 1px 2px rgba(0,0,0,0.05); transition:all 0.2s;">
+      <span style="display:block; width:8px; height:8px; border-radius:9999px; background:var(--accent-cyan);"></span>
+      100% Client-Side · Zero Uploads · Private
+    </div>
+
+    <!-- H1 -->
+    <h1 style="font-size:clamp(36px, 6vw, 56px); font-weight:600; letter-spacing:-2px; line-height:1.05; color:var(--text-ink); max-width:680px; margin:0 0 20px 0; transition:color 0.2s;">
+      Convert Images to Base64
+    </h1>
+
+    <!-- Subheading -->
+    <p style="font-size:18px; color:var(--text-body); max-width:560px; line-height:1.6; margin:0; transition:color 0.2s;">
+      Instantly encode images in your browser. Drag &amp; drop, paste, or browse — then copy HTML, CSS, React, or Tailwind snippets.
+    </p>
+  </div>
+</div>
